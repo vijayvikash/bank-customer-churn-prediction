@@ -1,0 +1,388 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "45ad228e-346e-4859-b27f-77d1f34f4d74",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "b41472e9-504e-428c-8662-12c000bd8848",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'pd' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[2], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m data \u001b[38;5;241m=\u001b[39m \u001b[43mpd\u001b[49m\u001b[38;5;241m.\u001b[39mread_csv(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mChurn_Modelling.csv\u001b[39m\u001b[38;5;124m'\u001b[39m)\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'pd' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "data = pd.read_csv('Churn_Modelling.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "6f8e30da-cc7e-45a3-bf40-6867c5c634a7",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'data' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[1], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[43mdata\u001b[49m\u001b[38;5;241m.\u001b[39mhead()\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'data' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "data.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "db4d7b56-90f7-4e7b-8529-d840f5c75eb5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.tail()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "774e3bfd-fc8e-4cd9-9efa-fdcee6bc3dd0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "9343ef2b-aa92-4780-a8f7-d7f872deea86",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'data' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[1], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mNumber of Rows\u001b[39m\u001b[38;5;124m\"\u001b[39m,\u001b[43mdata\u001b[49m\u001b[38;5;241m.\u001b[39mshap[\u001b[38;5;241m0\u001b[39m])\n\u001b[0;32m      2\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mNumber of columns\u001b[39m\u001b[38;5;124m\"\u001b[39m,data\u001b[38;5;241m.\u001b[39mshap[\u001b[38;5;241m1\u001b[39m])\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'data' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Number of Rows\",data.shap[0])\n",
+    "print(\"Number of columns\",data.shap[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "55202a37-5938-47bc-8f9b-2b82b74f9042",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.info()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "db312fd7-a69e-4755-abc9-1580b6cf6bad",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.isnull().sum()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9d95e0bd-19c4-4772-a732-bd1d08979c87",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.describe(include='all')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "657ac892-e602-4ce3-b899-1d2fa6d6ef74",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ee03e1db-49b3-4018-bb13-061aa4c1429c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = data.drop(['RowNumber','CustomerId','Surname'],axis=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ac9dbd67-07c4-4fda-b43d-4c43036f83f7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "72fa3212-58a5-4087-b4e5-9094357fa668",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data['Geography'].unique()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5724950f-9023-4ae6-9fca-cc37b5cbb6d1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = pd.get_dummies(data,drop_first=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8340b539-6b0f-453d-893e-8a83d2d5d9ae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1f294b60-80e9-40d3-aa9e-1935481edb88",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data['Exited'].value_counts()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "567c24c4-0697-4afe-9357-b0c55f8d4b87",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import seaborn as sns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b3aa3ae1-153c-420e-aa96-753022c712a6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sns.countplot(data['Exited'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7bfe402c-51ed-4aab-98af-b13d15ea5044",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = data.drop('Exited',axis=1)\n",
+    "y = data['Exited']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c036c4be-ee42-4b9a-9aaf-25f3f6934bb8",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "68577d4d-d3dc-425b-bd80-9b298688e31d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b76692cc-47fc-4cd1-a050-37afdb5ddfbb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.model_selection import train_test_split"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ad606187-c769-4f92-b95d-663f4b7fd25e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.20,random_state=42,stratify=y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ae9d6703-1119-4ed1-b67d-6364dc0a9836",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.preprocessing import StandardScaler"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d71cb9e0-1429-4bf8-8df0-542e353eebfb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sc = StandardScaler()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4259b006-a7c9-4b9d-b983-b6c23dca50bf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x_train=sc.fit_transform(x_train)\n",
+    "x_test = sc.transform(x_test)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b94a224f-3a25-49e0-b9f1-dad2252fb50d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x_train"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "143dabea-88d1-42b0-9168-1ff631ada0db",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.linear_model import LogisticRegression"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "be8a3caf-c24f-430d-98dc-d8c5d2e92393",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "log = LogisticRegression()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "196f3e8f-aaa0-4d4c-85d2-66217dab7b49",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "log.fit(x_train,y_train)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "38477ec2-8536-44e4-8cfe-ef8537c1d54d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "y_pred1 = log.predict(x_test)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d66b7459-581d-4f86-8520-21a60d3f0993",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.metrics import sccuracy_score"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aaba4dc5-c7c4-426b-bb3c-212265d0ab50",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
